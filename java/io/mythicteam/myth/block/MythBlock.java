@@ -1,4 +1,4 @@
-package io.mythicteam.myth.blocks;
+package io.mythicteam.myth.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.mythicteam.myth.Myth;
@@ -38,7 +38,7 @@ public class MythBlock extends Block {
 		super(material);
 		setBlockName(name);
 		setBlockTextureName(Myth.MODID + ":" + name);
-		setCreativeTab(MythTabs.MYTH_BLOCKS);
+		setCreativeTab(MythTabs.tabBlocks);
 		GameRegistry.registerBlock(this, name);
 	}
 
@@ -49,5 +49,10 @@ public class MythBlock extends Block {
 
 	public boolean isBeaconBase(IBlockAccess worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ){
 		return isBeaconBase;
+	}
+	
+	@Override
+	public String getUnlocalizedName() {
+		return Myth.MODID + super.getUnlocalizedName();
 	}
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import io.mythicteam.myth.event.FMLEventHandler;
 import io.mythicteam.myth.event.ForgeEventHandler;
 import io.mythicteam.myth.event.ServerEvents;
+import io.mythicteam.myth.item.AllItems;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ModMetadata;
@@ -30,7 +31,7 @@ public class Initiation {
 	}
 
 	protected static void init(FMLInitializationEvent event) {
-		
+		AllItems.addMythItems();
 	}
 
 	protected static void postInit(FMLPostInitializationEvent event) {
