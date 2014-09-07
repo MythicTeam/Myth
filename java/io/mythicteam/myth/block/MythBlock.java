@@ -14,27 +14,27 @@ public class MythBlock extends Block {
 
 	boolean isBeaconBase = false;
 
-	public MythBlock(Material material, String name, SoundType soundType, boolean isBeaconBase){
-		this(material, name, soundType);
+	public MythBlock(String name, Material material, SoundType soundType, boolean isBeaconBase){
+		this(name, material, soundType);
 		this.isBeaconBase = isBeaconBase;
 	}
 
-	public MythBlock(Material material, String name, boolean isBeaconBase) {
-		this(material, name);
+	public MythBlock(String name, Material material, boolean isBeaconBase) {
+		this(name, material);
 		this.isBeaconBase = isBeaconBase;
 	}
 
-	public MythBlock(Material material, String name, SoundType soundType){
-		this(material, name);
+	public MythBlock(String name, Material material, SoundType soundType){
+		this(name, material);
 		setStepSound(soundType);
 	}
 	
-	public MythBlock(Material material, String name, Block stealTextureBlock){
-		this(material, name);
+	public MythBlock(String name, Material material, Block stealTextureBlock){
+		this(name, material);
 		setBlockTextureName(stealTextureBlock.getUnlocalizedName().substring(5));
 	}
 
-	public MythBlock(Material material, String name) {
+	public MythBlock(String name, Material material) {
 		super(material);
 		setBlockName(name);
 		setBlockTextureName(Myth.MODID + ":" + name);

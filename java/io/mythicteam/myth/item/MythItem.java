@@ -38,17 +38,13 @@ public class MythItem extends Item{
 		if(beforeTranslation != afterTranslation){
 			list.add(infoFormat + afterTranslation);
 		}
+		list.add(EnumChatFormatting.DARK_GRAY + Myth.MODID + ":" + getUnlocalizedName().substring(10) + EnumChatFormatting.BOLD + "/" + EnumChatFormatting.DARK_GRAY + getIdFromItem(this));
 	}	
 	
 	@Override
 	public String getUnlocalizedName() {
         return Myth.MODID + "." + super.getUnlocalizedName();
 	}
-	
-	/*@Override
-	public String getUnlocalizedName(ItemStack itemstack) {
-		return Myth.MODID + "." + super.getUnlocalizedName(itemstack);
-	}*/
 	
 	@Override
 	public String getUnlocalizedNameInefficiently(ItemStack itemstack) {
