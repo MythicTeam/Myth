@@ -3,6 +3,7 @@ package io.mythicteam.myth;
 import java.util.Arrays;
 import java.util.List;
 
+import io.mythicteam.myth.block.AllBlocks;
 import io.mythicteam.myth.event.FMLEventHandler;
 import io.mythicteam.myth.event.ForgeEventHandler;
 import io.mythicteam.myth.event.ServerEvents;
@@ -31,6 +32,7 @@ public class Initiation {
 	}
 
 	protected static void init(FMLInitializationEvent event) {
+		AllBlocks.addMythBlocks();
 		AllItems.addMythItems();
 	}
 

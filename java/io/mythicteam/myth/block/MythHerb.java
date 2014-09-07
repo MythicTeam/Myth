@@ -28,7 +28,6 @@ public class MythHerb extends MythBlock implements IPlantable
         this.setTickRandomly(true);
         float f = 0.2F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 3.0F, 0.5F + f);
-        this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
     protected MythHerb(String name)
@@ -47,9 +46,9 @@ public class MythHerb extends MythBlock implements IPlantable
     /**
      * is the block grass, dirt or farmland
      */
-    protected boolean canPlaceBlockOn(Block p_149854_1_)
+    protected boolean canPlaceBlockOn(Block block)
     {
-        return p_149854_1_ == Blocks.grass || p_149854_1_ == Blocks.dirt || p_149854_1_ == Blocks.farmland;
+        return block == Blocks.grass || block == Blocks.dirt;
     }
 
     /**

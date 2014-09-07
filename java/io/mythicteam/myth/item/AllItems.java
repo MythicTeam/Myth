@@ -8,8 +8,7 @@ public class AllItems {
 
 	public static Item 
 	//Materials
-	test,
-	test2;
+	test;
 
 	/**
 	 * Adds all items in the mod

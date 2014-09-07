@@ -53,6 +53,6 @@ public class MythBlock extends Block {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return Myth.MODID + super.getUnlocalizedName();
+		return Myth.MODID + "." + super.getUnlocalizedName();
 	}
 }
