@@ -8,6 +8,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = Myth.MODID, name = Myth.NAME, version = Myth.VERSION)
 public class Myth {
@@ -31,6 +32,9 @@ public class Myth {
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event){Initiation.loadPostInit(event);}
 
+    @EventHandler
+    public static void serverStart(FMLServerStartingEvent event){Initiation.serverStart(event);}
+	
 	public static Myth getInstance(){
 		return INSTANCE;
 	}
