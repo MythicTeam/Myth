@@ -14,4 +14,12 @@ public class MythBlock extends Block{
 		GameRegistry.registerBlock(this, name);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
+	
+	protected MythBlock(String name, Block vanillaTexture, Material material) {
+		super(material);
+		setBlockName(name);
+		setBlockTextureName(vanillaTexture.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(this, name);
+		setCreativeTab(CreativeTabs.tabBlock);
+	}
 }
