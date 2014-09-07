@@ -1,44 +1,40 @@
 package io.mythicteam.myth;
 
+import io.mythicteam.myth.proxy.Proxy;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import io.mythicteam.myth.init.LoadingDock;
-import io.mythicteam.myth.proxy.Proxy;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-/**
- * Created by KeeperofMee on 2014-09-07.
- */
-@Mod(modid = Myth.MOD_ID, name = Myth.NAME, version = Myth.VERSION)
+@Mod(modid = Myth.MODID, name = Myth.NAME, version = Myth.VERSION)
 public class Myth {
-
-	public static final String MOD_ID = "myth";
+	
+	public static final String MODID = "myth";
 	public static final String NAME = "Myth";
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "0.0.1";
 
-	@Mod.Instance(MOD_ID)
+	@Instance(MODID)
 	private static Myth INSTANCE;
 
 	@SidedProxy(clientSide = "io.mythicteam.myth.proxy.ClientProxy", serverSide = "io.mythicteam.myth.proxy.CommonProxy")
 	public static Proxy proxy;
 
-	@Mod.EventHandler
-	public static void preInit(FMLPreInitializationEvent event){
-		LoadingDock.loadPreInit(event);
-	}
+	@EventHandler
+	public static void preInit(FMLPreInitializationEvent event){Initiation.loadPreInit(event);}
 
-	@Mod.EventHandler
-	public static void init(FMLInitializationEvent event){
-		LoadingDock.loadInit(event);
-	}
+	@EventHandler
+	public static void init(FMLInitializationEvent event){Initiation.loadInit(event);}
 
-	@Mod.EventHandler
-	public static void postInit(FMLPostInitializationEvent event){
-		LoadingDock.loadPostInit(event);
-	}
+	@EventHandler
+	public static void postInit(FMLPostInitializationEvent event){Initiation.loadPostInit(event);}
 
+    @EventHandler
+    public static void serverStart(FMLServerStartingEvent event){Initiation.serverStart(event);}
+	
 	public static Myth getInstance(){
 		return INSTANCE;
 	}
