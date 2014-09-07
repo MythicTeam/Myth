@@ -35,9 +35,6 @@ public class MythItem extends Item{
 		String beforeTranslation = getUnlocalizedName() + ".info";
 		String afterTranslation = StatCollector.translateToLocal(beforeTranslation);
 		
-		System.out.print("before : " + beforeTranslation);
-		System.out.println(" after: " + afterTranslation);
-		
 		if(beforeTranslation != afterTranslation){
 			list.add(infoFormat + afterTranslation);
 		}
