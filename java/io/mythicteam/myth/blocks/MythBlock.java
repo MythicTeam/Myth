@@ -1,6 +1,7 @@
 package io.mythicteam.myth.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import io.mythicteam.myth.Myth;
 import io.mythicteam.myth.init.MythTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -31,7 +32,7 @@ public class MythBlock extends Block {
 	public MythBlock(Material material, String name) {
 		super(material);
 		setBlockName(name);
-		setBlockTextureName(getUnlocalizedName().substring(5));
+		setBlockTextureName(Myth.MODID + ":" + getUnlocalizedName().substring(5));
 		setCreativeTab(MythTabs.MYTH_BLOCKS);
 		GameRegistry.registerBlock(this, getUnlocalizedName().substring(5));
 	}
