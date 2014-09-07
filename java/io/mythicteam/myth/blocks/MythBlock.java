@@ -28,13 +28,18 @@ public class MythBlock extends Block {
 		this(material, name);
 		setStepSound(soundType);
 	}
+	
+	public MythBlock(Material material, String name, Block stealTextureBlock){
+		this(material, name);
+		setBlockTextureName(stealTextureBlock.getUnlocalizedName().substring(5));
+	}
 
 	public MythBlock(Material material, String name) {
 		super(material);
 		setBlockName(name);
-		setBlockTextureName(Myth.MODID + ":" + getUnlocalizedName().substring(5));
+		setBlockTextureName(Myth.MODID + ":" + name);
 		setCreativeTab(MythTabs.MYTH_BLOCKS);
-		GameRegistry.registerBlock(this, getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(this, name);
 	}
 
 	public Block setBeaconBase(){
