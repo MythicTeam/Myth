@@ -1,12 +1,15 @@
 package io.mythicteam.myth.block;
 
+import io.mythicteam.myth.tileentity.TileEntityForge;
+import io.mythicteam.myth.tileentity.TileEntityRotatable;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class AllBlocks {
 
 	public static Block 
-	raskovnik;
+	raskovnik,
+	forge;
 
 	/**
 	 * Adds all blocks in the mod
@@ -16,5 +19,8 @@ public class AllBlocks {
 		
 		//Plants and Herbs
 		raskovnik = new MythHerb("raskovnik", Material.vine).setStepSound(Block.soundTypeGrass);
+
+		//Temp
+		forge = new MythRotatableSpecialRenderedBlock("forge", Material.rock, TileEntityForge.class);
 	}
 }

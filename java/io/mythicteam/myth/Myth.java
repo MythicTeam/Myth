@@ -33,7 +33,7 @@ public class Myth {
 	public static void preInit(FMLPreInitializationEvent event){Initiation.preInit(event);}
 
 	@EventHandler
-	public static void init(FMLInitializationEvent event){Initiation.init(event);}
+	public static void init(FMLInitializationEvent event){Initiation.init(event); proxy.registerRenders();}
 
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event){Initiation.postInit(event);}

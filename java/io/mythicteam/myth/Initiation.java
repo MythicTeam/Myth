@@ -3,11 +3,14 @@ package io.mythicteam.myth;
 import java.util.Arrays;
 import java.util.List;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import io.mythicteam.myth.block.AllBlocks;
 import io.mythicteam.myth.event.FMLEventHandler;
 import io.mythicteam.myth.event.ForgeEventHandler;
 import io.mythicteam.myth.event.ServerEvents;
 import io.mythicteam.myth.item.AllItems;
+import io.mythicteam.myth.tileentity.TileEntityForge;
+import io.mythicteam.myth.tileentity.TileEntityRotatable;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.ModMetadata;
@@ -28,12 +31,17 @@ public class Initiation {
     	setModMeta();
     	
         MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
-		FMLCommonHandler.instance().bus().register(new FMLEventHandler());	
+		FMLCommonHandler.instance().bus().register(new FMLEventHandler());
+
+		GameRegistry.registerTileEntity(TileEntityRotatable.class, "tileentityRotatable");
+		GameRegistry.registerTileEntity(TileEntityForge.class, "tileentityForge");
+
+		AllBlocks.addMythBlocks();
+		AllItems.addMythItems();
 	}
 
 	protected static void init(FMLInitializationEvent event) {
-		AllBlocks.addMythBlocks();
-		AllItems.addMythItems();
+		/*RECIPES ONLY|NO BLOCKS OR ITEMS|ALL BLOCKS AND ITEMS SHOULD BE AVAILABLE AT THIS TIME*/
 	}
 
 	protected static void postInit(FMLPostInitializationEvent event) {

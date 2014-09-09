@@ -9,24 +9,14 @@ import net.minecraft.world.IBlockAccess;
 
 /**
  * Created by KeeperofMee on 2014-09-07.
- */
+ **/
 public class MythBlock extends Block {
 
 	boolean isBeaconBase = false;
 
-	public MythBlock(String name, Material material, SoundType soundType, boolean isBeaconBase){
-		this(name, material, soundType);
-		this.isBeaconBase = isBeaconBase;
-	}
-
 	public MythBlock(String name, Material material, boolean isBeaconBase) {
 		this(name, material);
 		this.isBeaconBase = isBeaconBase;
-	}
-
-	public MythBlock(String name, Material material, SoundType soundType){
-		this(name, material);
-		setStepSound(soundType);
 	}
 	
 	public MythBlock(String name, Material material, Block stealTextureBlock){
